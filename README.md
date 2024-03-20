@@ -1,1 +1,1 @@
-# cse167
+# CSE 167 Extra Credit Page
