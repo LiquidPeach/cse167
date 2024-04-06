@@ -4,15 +4,15 @@ This is my extra credit submission for the ray tracer assignment.
 
 ## Path Tracer Business Card
 
-I wanted to make a path tracer because I wanted to see global illumination in my scenes. Then I thought it would be neat to make a business card out of it (~~I deeply regret it~~). After many many hours and lots of hair pulling, I had successfully condensed my initial path tracer code into 1,444 characters and printed it on business cards. I got the inspiration to make a pocket-sized path tracer from Kevin Beason's [*smallPT*](https://www.kevinbeason.com/smallpt/). His implementation also helped me understand the algorithm, so I highly recommend checking out his article.
+I made a path tracer because I wanted to see global illumination in my scenes. Then I thought it would be neat to make a business card out of it (~~I deeply regret it~~). After many, many hours and lots of hair pulling, I had successfully condensed my initial path tracer code into 1,444 characters. I then had it printed on business cards. I got the inspiration to make a pocket-sized path tracer from Kevin Beason's own minimized path tracer [*smallPT*](https://www.kevinbeason.com/smallpt/). His implementation also helped me understand the algorithm, so I highly recommend checking out his article.
 
 ![card](card.jpg)
 
 ### Implementation
 
-This implementation uses Monte Carlo integration to calculate the directions of secondary rays when they hit a lambertian (diffuse) surface. I was only able to make one shape, and it had to be a sphere since it was the simplest primitive and required the least amount of code. The walls, floor, and ceiling are gigantic spheres and the ceiling is the emmiter. The contents of the Cornell Box are two spheres, one is metal and the other is lambertian. I chose these materials because I thought they would better represent the abilities of the path tracer.
+This implementation uses Monte Carlo integration to calculate the directions of secondary rays when they hit a lambertian (diffuse) surface. I was only able to make one shape, and it had to be a sphere since it is the simplest primitive and required the least amount of code. The walls, floor, and ceiling are gigantic spheres with the ceiling as the emmiter. The contents of the Cornell Box are two spheres, one is metal and the other is lambertian. I chose these materials because I thought they would better represent the abilities of the path tracer.
 
-Here is the code. You can run it with `./card > card.ppm` to save the output in a `.ppm` file and view the final image with [this ppm viewer website.](https://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html) Be warned, it is slow. There is also antialiasing with a sample size of 100. You can change that value if you'd like, as well as the size of the image. 
+Here is the code. You can run it with `./card > card.ppm` to save the output in a `.ppm` file and view the final image with [this ppm viewer website.](https://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html) Be warned, it is slow. There is also anti-aliasing with a sample size of 100. You can change that value if you'd like, as well as the size of the image. 
 ```
 #include <stdio.h>
 #include <cmath>
